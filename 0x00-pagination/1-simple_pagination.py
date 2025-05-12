@@ -46,8 +46,8 @@ class Server:
         :param page_size: page size
         :return: list of result
         """
-        assert isinstance(page, int)
-        assert isinstance(page_size, int)
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
         start_ind, end_ind = index_range(page, page_size)
         result = self.dataset()
         if start_ind >= len(result):
