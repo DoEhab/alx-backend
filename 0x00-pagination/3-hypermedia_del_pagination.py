@@ -40,6 +40,12 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """
+
+        :param index:  record index
+        :param page_size: number of records
+        :return: dict containing data
+        """
         assert isinstance(index, int) and index >= 0
         indexed_set = self.__indexed_dataset()
         assert index < len(indexed_set)
