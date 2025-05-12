@@ -8,6 +8,18 @@ import csv
 from typing import List
 
 
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    """
+
+    :param page: page number
+    :param page_size: the number of records
+    :return: tuple
+    """
+    start_index = (page - 1) * page_size
+    end_index = start_index + page_size
+    return start_index, end_index
+
+
 class Server:
     """Server class to paginate a database of popular baby names.
     """
@@ -27,17 +39,6 @@ class Server:
 
         return self.__dataset
 
-    def index_range(page: int, page_size: int) -> Tuple[int, int]:
-        """
-
-        :param page: page number
-        :param page_size: the number of records
-        :return: tuple
-        """
-        start_index = (page - 1) * page_size
-        end_index = start_index + page_size
-        return start_index, end_index
-
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
 
@@ -47,8 +48,8 @@ class Server:
         """
         assert isinstance(page, int)
         assert isinstance(page_size, int)
-        start_ind, end_index = self.index_range(page, page_size)
+        start_ind, end_ind = index_range(page, page_size)
         result = self.dataset()
         if start_ind >= len(result):
             return []
-        return result[start_ind, end_index]
+        return result[start_ind: end_ind]
