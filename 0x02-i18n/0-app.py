@@ -9,6 +9,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def basic_app():
+    """
+    main method to render html
+    """
     return render_template("0-index.html")
 
 
