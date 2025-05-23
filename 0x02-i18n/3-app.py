@@ -33,7 +33,7 @@ def basic_app():
     """
     :return: html page
     """
-    return render_template("3-index.html", get_locale=get_locale)
+    return render_template("3-index.html")
 
 
 if __name__ == '__main__':
