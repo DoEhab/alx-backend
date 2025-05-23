@@ -5,6 +5,9 @@
 #
 msgid "home_title"
 msgstr "Welcome to ALX"
+
+msgid "home_header"
+msgstr "Hello world!"
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-05-23 21:56+0300\n"
