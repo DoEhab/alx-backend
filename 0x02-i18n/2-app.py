@@ -30,6 +30,9 @@ def get_locale():
 
 @app.route('/')
 def basic_app():
+    """
+    :return: html page
+    """
     return render_template("2-index.html")
 
 
